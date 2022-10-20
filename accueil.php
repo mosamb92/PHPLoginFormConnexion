@@ -1,11 +1,9 @@
 <?php 
-require 'header.php'; 
+require 'elements/header.php'; 
 if(empty($_SESSION)):
     header('Location: login.php');
 endif;
 ?>
 
 
-
-
-<?php require 'footer.php'; ?>
+<?php require 'elements/footer.php'; ?>

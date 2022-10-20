@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require "dbconnexion.php";
+//require "dbconnexion.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +29,7 @@ require "dbconnexion.php";
                 </ul>
                 <span class="navbar-text">
                 <i class="fa fa-user"></i> | <?php echo $_SESSION['username']; ?>
-                    <a href="logout.php" class="btn btn-outline-danger"> Déconnexion | <i class="fa fa-power-off"></i></a>
+                    <a href="./traitements/logout.php" class="btn btn-outline-danger"> Déconnexion | <i class="fa fa-power-off"></i></a>
                 </span>
                 </div>
             </div>

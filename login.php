@@ -1,9 +1,9 @@
 <?php 
-require 'header.php';
+require 'elements/header.php';
 if(!empty($_SESSION)):
     header('Location: accueil.php');
 endif;
-if(isset($_POST['seconnecter']))    {
+/*if(isset($_POST['seconnecter']))    {
     $login = trim($_POST['login']);
     $pass = trim($_POST['pswd']);
     $req = $conn->prepare("SELECT * FROM users WHERE login = ? LIMIT 1");
@@ -22,7 +22,7 @@ if(isset($_POST['seconnecter']))    {
     else {
         $erreur="Nom d'utilisateur et/ou mot de passe incorrect!";
     }
-}
+}*/
 ?>
         <br>
         <hr>
@@ -30,11 +30,11 @@ if(isset($_POST['seconnecter']))    {
                 <h5 class="card-header">Authentification - <i class="fa fa-lock"></i></h5>
                 <div class="card-body">
                     <h5 class="card-title">Entrer vos identifiants - <i class="fa fa-address-card"></i></h5>
-                    <form action="" method="POST">
-                        <?php echo isset($erreur) ? '<div class="alert alert-danger" role="alert">'.$erreur .'</div>' : ''; ?>
+                    <form action="traitements/login.php" method="POST">
+                        <?php echo isset($_GET['error']) ? '<div class="alert alert-danger" role="alert">Nom d\'utilisateur et/ou mot de passe incorrect!</div>' : ''; ?>
                         <div class="mb-3 mt-3">
                             <label for="login" class="form-label"><i class="fa fa-user"></i> - Nom d'utilisateur:</label>
-                            <input type="text" required class="form-control" id="login" placeholder="Entrer votre login" name="login">
+                            <input type="text" autocomplete="off"  required class="form-control" id="login" placeholder="Entrer votre login" name="login">
                         </div>
                         <div class="mb-3">
                             <label for="pwd" class="form-label"><i class="fa fa-key"></i> - Mot de passe:</label>
@@ -44,4 +44,4 @@ if(isset($_POST['seconnecter']))    {
                     </form>
                 </div>
             </div>
-<?php require 'footer.php'; ?>
+<?php require 'elements/footer.php'; ?>
